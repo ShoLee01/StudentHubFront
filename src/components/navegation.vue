@@ -18,11 +18,14 @@
       <v-btn text plain to="/home">
         <span class="mr-2">Home</span>
       </v-btn>
-      <v-btn text plain to="/plans">
-        <span class="mr-2">PLans</span>
+      <v-btn text plain to="/tutors">
+        <span class="mr-2">Tutors</span>
       </v-btn>
-      <v-btn text plain to="/sing_in">
-        <span class="mr-2">Sing in</span>
+      <v-btn text plain to="/sign_in">
+        <span class="mr-2">Log in</span>
+      </v-btn>
+      <v-btn text plain to="/sign_up">
+        <span class="mr-2">Sign up</span>
       </v-btn>
       <v-btn text plain to="/profile">
         <span class="mr-2">Profile</span>

@@ -10,6 +10,22 @@ const routes = [
         alias: '/home',
         name: 'Home',
         component: Home
+    },
+    {
+        path: "/sign_in",
+        name: "/sign_in",
+        component: () => import("../components/sign-in"),
+    },
+    {
+        path: "/sign_up",
+        name: "/sign_up",
+        component: () => import("../components/sign-up"),
+    }
+    ,
+    {
+        path: "/tutors",
+        name: "/tutors",
+        component: () => import("../components/tutors"),
     }
 ]
 
