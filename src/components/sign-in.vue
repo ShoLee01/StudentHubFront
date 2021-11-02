@@ -6,15 +6,22 @@
           <form class="login-form" v-on:submit.prevent="authLoginAppUser">
             <h3 class="title-login mb-6">Sign In</h3>
 
-            <div class="form-wrapper mb-6 d-flex flex-column">
-              <label class="title">Email</label>
-              <input type="text" name="email" id="email" v-model="email" placeholder="Enter your Email" class="form-control" required>
+            <div class="form-wrapper">
+              <v-text-field
+                  label="Email"
+                  filled
+                  type="text" name="email" id="email" v-model="email" placeholder="Enter your Email" required
+              ></v-text-field>
             </div>
 
-            <div class="form-wrapper mb-6 d-flex flex-column">
-              <label class="title" for="password">Password</label>
-              <input type="password" name="password" id="password" v-model="password" placeholder="******" class="form-control" required>
+            <div class="form-wrapper">
+              <v-text-field
+                  label="Password"
+                  filled
+                  type="password" name="password" id="password" v-model="password" placeholder="******"  required
+              ></v-text-field>
             </div>
+
             <div class="d-flex justify-center align-center">
             <v-btn  color="primary"
                     elevation="2"
