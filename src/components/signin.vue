@@ -24,9 +24,10 @@
 
             <div class="d-flex justify-center align-center">
             <v-btn  color="primary"
+                    @click="inicio"
                     elevation="2"
                     small
-                    x-large type="submit" class="">LOG IN<span v-if="showSpinner" class="fa fa-spin fa-spinner"></span></v-btn>
+                    x-large type="submit" >LOG IN<span class="fa fa-spin fa-spinner"></span></v-btn>
             </div>
 
           </form>
@@ -45,8 +46,49 @@
 </template>
 
 <script>
+import axios from "axios";
+import profile from "@/components/profile";
+import Vue from "vue";
+import navegation from "@/components/navegation";
+
 export default {
-  name: "sign-in"
+  name: "signin",
+
+  data: () => ({
+    user:[],
+    password: "",
+    email: "",
+    valor: false
+  }),
+   component:{
+    profile,
+     navegation
+  },
+  methods:{
+    inicio(){
+      axios.get(`https://aqueous-lowlands-60101.herokuapp.com/api/user`)
+          .then(response => {
+            this.user = response.data;
+            console.log('data: ');
+            for (let i=0; i<this.user.length;i++) {
+              console.log(this.user[i].name);
+              if(this.user[i].password === this.password && this.user[i].email === this.email){
+                alert("Inicio correctamente")
+                this.valor =true;
+                this.$router.push("/home");
+                Vue.prototype.$dataAll = this.user[i];
+                this.$store.state.stateLogin= true;
+              }
+              if(this.user.length-1 == i && this.valor == false ){
+                alert("Usuario o contraseña son incorrectas");
+              }
+            }
+          })
+          .catch( e => {
+            this.error.push(e);
+          });
+    }
+  }
 }
 </script>
 

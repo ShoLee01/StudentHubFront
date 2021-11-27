@@ -8,6 +8,7 @@
             StudentHub
           </p>
           <v-btn
+          @click="comenzar"
           elevation="4"
           small
           x-large
@@ -27,7 +28,13 @@
 import About from "@/components/about";
 export default {
   name: "Home",
-  components: {About}
+  components: {About},
+  methods: {
+    comenzar() {
+      this.$router.push("/signin");
+      console.log(this.$store.state.stateLogin);
+    }
+  }
 }
 </script>
 

@@ -36,7 +36,7 @@
                       color="primary"
                       elevation="2"
                       small
-                      x-large type="submit" class="">REGISTER<span v-if="showSpinner" class="fa fa-spin fa-spinner"></span></v-btn>
+                      x-large type="submit" class="">REGISTER<span class="fa fa-spin fa-spinner"></span></v-btn>
             </div>
 
           </form>
@@ -58,7 +58,7 @@
 import axios from "axios";
 
 export default {
-  name: "sign-in",
+  name: "sign-up",
   data(){
     return{
       verInicio: false,
@@ -75,10 +75,12 @@ export default {
         password: this.password
       }).then(response => {
         console.log(response.data);
+        alert("Se Registro correctamente");
+        this.$router.push("/signin");
       }).catch( err => {
         console.log(err);
       });
-      this.$router.push("/home");
+
     },
   }
 }

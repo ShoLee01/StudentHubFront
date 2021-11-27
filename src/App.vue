@@ -12,8 +12,11 @@
 import navegation from "@/components/navegation";
 
 export default {
-
-  components: { navegation }
+  data: () => ({
+    stateLogin: false
+  }),
+  components: { navegation },
 
 };
+
 </script>

@@ -23,7 +23,7 @@
               <v-img class="rounded-circle" v-bind:src="tutor.url" width="150" height="150"></v-img>
               <div class="d-flex flex-column mt-4 justify-start">
                 <v-card-text class="black--text ">
-                  <strong>Nombre: </strong> {{ tutor.description }}
+                  <strong>Descripcion: </strong> {{ tutor.description }}
                 </v-card-text>
                 <v-card-text class="black--text ">
                   <strong>Precio por hora:  </strong>   S/{{ tutor.pricePerHour }}.00
@@ -34,7 +34,7 @@
                     v-if="hover"
                     class="d-flex transition-fast-in-fast-out black v-card--reveal white--text"
                     style="height: 100%;">
-                  <v-btn outlined color="white"> Detail</v-btn>
+                  <v-btn outlined color="white">Detail</v-btn>
                 </div>
               </v-expand-transition>
 
@@ -48,7 +48,7 @@
 </template>
 
 <script>
-// @ is an alias to /src
+
 import axios from "axios";
 
 

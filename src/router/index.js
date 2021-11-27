@@ -12,9 +12,9 @@ const routes = [
         component: Home
     },
     {
-        path: "/sign_in",
-        name: "/sign_in",
-        component: () => import("../components/sign-in"),
+        path: "/signin",
+        name: "/signin",
+        component: () => import("../components/signin"),
     },
     {
         path: "/sign_up",
@@ -26,6 +26,12 @@ const routes = [
         path: "/tutors",
         name: "/tutors",
         component: () => import("../components/tutors"),
+    }
+    ,
+    {
+        path: "/profile",
+        name: "/profile",
+        component: () => import("../components/profile"),
     }
 ]
 
